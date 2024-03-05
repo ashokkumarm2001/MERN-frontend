@@ -117,7 +117,7 @@ const EditStudent = ({ location }) => {
       try {
         const search = location.search;
         const id = search.substring(1, search.length);
-        const updateStudent = await axios.get(`http://localhost:3500/${id}`);
+        const updateStudent = await axios.get(`https://mern-backend-xni0.onrender.com/${id}`);
         const { name, email, enrollnumber } = updateStudent.data.student;
         setId(id);
         setName(name);
@@ -133,7 +133,7 @@ const EditStudent = ({ location }) => {
   const updateStudentHandler = async (e) => {
     e.preventDefault();
     try {
-      const student = await axios.put(`http://localhost:3500/put/${id}`, {
+      const student = await axios.put(`https://mern-backend-xni0.onrender.com/put/${id}`, {
         name,
         email,
         enrollnumber
