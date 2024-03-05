@@ -18,7 +18,7 @@ class AddStudent extends Component {
   addStudent = async e => {
     e.preventDefault();
     try {
-      const newStudent = await axios.post("https://mern-backend-mago.onrender.com/post", {
+      const newStudent = await axios.post("http://localhost:3500/post", {
           name: this.refs.name.value,
           email: this.refs.email.value,
           enrollnumber: this.refs.enrollnumber.value
