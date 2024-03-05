@@ -187,7 +187,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const students = await axios("http://localhost:3500/");
+        const students = await axios("https://mern-backend-xni0.onrender.com");
         setData(students.data);
       } catch (err) {
         setError(err.message);
@@ -198,8 +198,8 @@ const Home = () => {
 
   const removeStudent = async (id) => {
     try {
-      await axios.delete(`http://localhost:3500/${id}`);
-      const students = await axios("http://localhost:3500/");
+      await axios.delete(`https://mern-backend-xni0.onrender.com/delete/${id}`);
+      const students = await axios("https://mern-backend-xni0.onrender.com");
       setData(students.data);
     } catch (err) {
       setError(err.message);
